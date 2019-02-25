@@ -2,8 +2,12 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema.js');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
+
+// allow cors request
+app.use(cors());
 
 mongoose.connect("mongodb://amr:123@cluster0-shard-00-00-gcrtg.mongodb.net:27017,cluster0-shard-00-01-gcrtg.mongodb.net:27017,cluster0-shard-00-02-gcrtg.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true", function() { /* dummy function */ })
 .then(() => {
