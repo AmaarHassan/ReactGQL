@@ -50,13 +50,16 @@ class AddBook extends Component {
                     <input type="text"  onChange={ (e) => this.setState({genre:e.target.value})}/>
                 </div>
                 <div className="field">
-                    <select  onChange={ (e) => this.setState({authorID:e.target.value})}>
+                <label> Author </label>
+                <select  onChange={ (e) => this.setState({authorID:e.target.value})}>
                         <option> Select Author </option>
                        {this.displayAuthors()}
                     </select>
                 </div>
                 
-                <button> + </button>
+                <center><br/>
+                    <button> + </button>
+                </center>
             </form>
         </div>
     );

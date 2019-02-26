@@ -24,7 +24,6 @@ class BookList extends Component {
                 data.books.map(book =>{
                     return(
                         <li key={book.id} onClick={(e) => {this.setState({selected:book.id})}}>{book.name}
-                                Written by <i className="author" title={book.author.age}>{book.author.name}</i>
                         </li>
                     )
                 })
