@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {compose, graphql} from 'react-apollo';
-import {getAuthorsQuery} from '../queries/queries';
-import {addBookMutation} from '../queries/queries';
+import {getAuthorsQuery, addBookMutation, getBooksQuery} from '../queries/queries';
 
 class AddBook extends Component {
     constructor(props){
@@ -34,7 +33,8 @@ class AddBook extends Component {
             name: this.state.name,
             genre: this.state.genre,
             authorID: this.state.authorID
-        }
+        },// in order to re-render the books list, we refresh its query
+        refetchQueries: [{query: getBooksQuery}]
     });
   }
   render() {
